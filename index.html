@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page advocacia</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Advocacia XYZ</h1>
+            </div>
+            <ul>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h2>Consultoria Jurídica Especializada</h2>
+            <p>Proteja seus direitos com nossos advogados experientes. Consultoria gratuita para novos clientes!</p>
+            <a href="#contato" class="cta">Agende uma Consulta Gratuita</a>
+        </div>
+    </header>
+
+    <section id="servicos" class="servicos">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <div class="servico">
+                <h3>Direito Civil</h3>
+                <p>Assessoria e defesa em questões de família, contratos, responsabilidade civil, e muito mais.</p>
+            </div>
+            <div class="servico">
+                <h3>Direito Trabalhista</h3>
+                <p>Consultoria para empregados e empregadores em disputas trabalhistas, acordos e rescisões.</p>
+            </div>
+            <div class="servico">
+                <h3>Direito Empresarial</h3>
+                <p>Serviços jurídicos para empresas, incluindo contratos comerciais, fusões, aquisições e compliance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <h2>Sobre o Escritório</h2>
+            <p>Somos um escritório de advocacia comprometido em fornecer soluções jurídicas personalizadas para nossos
+                clientes. Nossa equipe de advogados é especializada em diversas áreas do direito e oferece assessoria jurídica
+                de alta qualidade.</p>
+        </div>
+    </section>
+
+    <section id="contato" class="contato">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <form id="contactForm">
+                <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
+                <input type="email" id="email" name="email" placeholder="Seu E-mail" required>
+                <textarea id="mensagem" name="mensagem" placeholder="Descreva sua dúvida ou solicitação" required></textarea>
+                <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                <div id="formResponse"></div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Advocacia XYZ - Todos os direitos reservados</p>
+            <ul>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // Função para validar o formulário e exibir a resposta
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Impede o envio do formulário
+            var nome = document.getElementById('nome').value;
+            var email = document.getElementById('email').value;
+            var mensagem = document.getElementById('mensagem').value;
+            var formResponse = document.getElementById('formResponse');
+
+            // Validação simples de campos
+            if (nome === "" || email === "" || mensagem === "") {
+                formResponse.innerHTML = "<p style='color:red;'>Por favor, preencha todos os campos.</p>";
+            } else {
+                formResponse.innerHTML = "<p style='color:green;'>Mensagem enviada com sucesso! Entraremos em contato em breve.</p>";
+                // Aqui você pode adicionar código para enviar os dados para um servidor, caso necessário
+                document.getElementById('contactForm').reset(); // Limpa os campos do formulário
+            }
+        });
+
+        // Efeito de animação para a chamada à ação (CTA)
+        document.querySelector('.cta').addEventListener('mouseover', function () {
+            this.style.backgroundColor = '#d88c00';
+        });
+        document.querySelector('.cta').addEventListener('mouseout', function () {
+            this.style.backgroundColor = '#f4a300';
+        });
+    </script>
+
+
+</body>
+</html>
